@@ -1,0 +1,21 @@
+﻿	<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="13.0.1" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Azure.ServiceBus" Version="5.2.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="8.0.0" />
+		<PackageReference Include="Defra.Trade.CrmAdapter.Api.V1.ApiClient" Version="2.3.6" />
+		<PackageReference Include="Microsoft.Extensions.DependencyModel" Version="8.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Defra.Trade.Common.Function.Health\Defra.Trade.Common.Function.Health.csproj" />
+	  <ProjectReference Include="..\Defra.Trade.Events.EHCO.GCSubscriber.Infra\Defra.Trade.Events.EHCO.GCSubscriber.Infra.csproj" />
+	</ItemGroup>
+
+</Project>
