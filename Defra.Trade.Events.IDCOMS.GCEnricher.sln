@@ -1,0 +1,101 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tst", "tst", "{AED954A0-C192-4E67-834E-080D52AA09AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F5A9AE79-0E25-4CAD-9C39-550BC28385F4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Defra.Trade.Events.IDCOMS.GCEnricher.Application", "src\Defra.Trade.Events.IDCOMS.GCEnricher.Application\Defra.Trade.Events.IDCOMS.GCEnricher.Application.csproj", "{821F0CB3-6C7F-48D9-A591-BFB9C49617D2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Defra.Trade.Events.IDCOMS.GCEnricher.Tests.Common", "test\Defra.Trade.Events.IDCOMS.GCEnricher.Tests.Common\Defra.Trade.Events.IDCOMS.GCEnricher.Tests.Common.csproj", "{06A4CCDB-BE2D-40BF-9231-CBE7D362DBA6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Defra.Trade.Events.IDCOMS.GCEnricher", "src\Defra.Trade.Events.IDCOMS.GCEnricher\Defra.Trade.Events.IDCOMS.GCEnricher.csproj", "{EB1F6638-7738-4A4F-B1FF-AADB8CF4A170}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pipeline", "pipeline", "{BCAF313F-2C96-4ED6-A123-177520E092CE}"
+	ProjectSection(SolutionItems) = preProject
+		pipelines\build.yaml = pipelines\build.yaml
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Defra.Trade.Events.IDCOMS.GCEnricher.Application.UnitTests", "test\Defra.Trade.Events.IDCOMS.GCEnricher.Application.UnitTests\Defra.Trade.Events.IDCOMS.GCEnricher.Application.UnitTests.csproj", "{CFD0730B-1574-4823-BA62-76314B6E3E38}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Defra.Trade.Common.Function.Health", "src\Defra.Trade.Common.Function.Health\Defra.Trade.Common.Function.Health.csproj", "{438FBB41-4F95-4BF5-8B19-6F5CC6399CC0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Defra.Trade.Common.Function.Health.UnitTests", "test\Defra.Trade.Common.Function.Health.UnitTests\Defra.Trade.Common.Function.Health.UnitTests.csproj", "{12ECB4BE-910C-477A-8540-DFF91F9C6305}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Defra.Trade.Events.EHCO.GCSubscriber.Infra.UnitTests", "test\Defra.Trade.Events.EHCO.GCSubscriber.Infra.UnitTests\Defra.Trade.Events.EHCO.GCSubscriber.Infra.UnitTests.csproj", "{FBC0919E-9FA8-4678-9D28-B50D1C09E7B8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Defra.Trade.Events.EHCO.GCSubscriber.Infra", "src\Defra.Trade.Events.EHCO.GCSubscriber.Infra\Defra.Trade.Events.EHCO.GCSubscriber.Infra.csproj", "{C1CE4AAE-424B-4C11-B13D-286B52EF9D3B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5F272319-B9AD-4B06-8AC1-A7EE58505A18}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		CONTRIBUTING.md = CONTRIBUTING.md
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Defra.Trade.Events.IDCOMS.GCEnricher.UnitTests", "test\Defra.Trade.Events.IDCOMS.GCEnricher.UnitTests\Defra.Trade.Events.IDCOMS.GCEnricher.UnitTests.csproj", "{50E57A83-6C64-4C78-B5B6-456CDAD71CFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{821F0CB3-6C7F-48D9-A591-BFB9C49617D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{821F0CB3-6C7F-48D9-A591-BFB9C49617D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{821F0CB3-6C7F-48D9-A591-BFB9C49617D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{821F0CB3-6C7F-48D9-A591-BFB9C49617D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06A4CCDB-BE2D-40BF-9231-CBE7D362DBA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06A4CCDB-BE2D-40BF-9231-CBE7D362DBA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06A4CCDB-BE2D-40BF-9231-CBE7D362DBA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06A4CCDB-BE2D-40BF-9231-CBE7D362DBA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB1F6638-7738-4A4F-B1FF-AADB8CF4A170}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB1F6638-7738-4A4F-B1FF-AADB8CF4A170}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB1F6638-7738-4A4F-B1FF-AADB8CF4A170}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB1F6638-7738-4A4F-B1FF-AADB8CF4A170}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFD0730B-1574-4823-BA62-76314B6E3E38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFD0730B-1574-4823-BA62-76314B6E3E38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFD0730B-1574-4823-BA62-76314B6E3E38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFD0730B-1574-4823-BA62-76314B6E3E38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{438FBB41-4F95-4BF5-8B19-6F5CC6399CC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{438FBB41-4F95-4BF5-8B19-6F5CC6399CC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{438FBB41-4F95-4BF5-8B19-6F5CC6399CC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{438FBB41-4F95-4BF5-8B19-6F5CC6399CC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12ECB4BE-910C-477A-8540-DFF91F9C6305}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12ECB4BE-910C-477A-8540-DFF91F9C6305}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12ECB4BE-910C-477A-8540-DFF91F9C6305}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12ECB4BE-910C-477A-8540-DFF91F9C6305}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBC0919E-9FA8-4678-9D28-B50D1C09E7B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBC0919E-9FA8-4678-9D28-B50D1C09E7B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBC0919E-9FA8-4678-9D28-B50D1C09E7B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBC0919E-9FA8-4678-9D28-B50D1C09E7B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1CE4AAE-424B-4C11-B13D-286B52EF9D3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1CE4AAE-424B-4C11-B13D-286B52EF9D3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1CE4AAE-424B-4C11-B13D-286B52EF9D3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1CE4AAE-424B-4C11-B13D-286B52EF9D3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50E57A83-6C64-4C78-B5B6-456CDAD71CFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50E57A83-6C64-4C78-B5B6-456CDAD71CFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50E57A83-6C64-4C78-B5B6-456CDAD71CFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50E57A83-6C64-4C78-B5B6-456CDAD71CFD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{821F0CB3-6C7F-48D9-A591-BFB9C49617D2} = {F5A9AE79-0E25-4CAD-9C39-550BC28385F4}
+		{06A4CCDB-BE2D-40BF-9231-CBE7D362DBA6} = {AED954A0-C192-4E67-834E-080D52AA09AC}
+		{EB1F6638-7738-4A4F-B1FF-AADB8CF4A170} = {F5A9AE79-0E25-4CAD-9C39-550BC28385F4}
+		{CFD0730B-1574-4823-BA62-76314B6E3E38} = {AED954A0-C192-4E67-834E-080D52AA09AC}
+		{438FBB41-4F95-4BF5-8B19-6F5CC6399CC0} = {F5A9AE79-0E25-4CAD-9C39-550BC28385F4}
+		{12ECB4BE-910C-477A-8540-DFF91F9C6305} = {AED954A0-C192-4E67-834E-080D52AA09AC}
+		{FBC0919E-9FA8-4678-9D28-B50D1C09E7B8} = {AED954A0-C192-4E67-834E-080D52AA09AC}
+		{C1CE4AAE-424B-4C11-B13D-286B52EF9D3B} = {F5A9AE79-0E25-4CAD-9C39-550BC28385F4}
+		{50E57A83-6C64-4C78-B5B6-456CDAD71CFD} = {AED954A0-C192-4E67-834E-080D52AA09AC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {832D0746-592A-45A1-B533-07CD521BD22A}
+	EndGlobalSection
+EndGlobal
