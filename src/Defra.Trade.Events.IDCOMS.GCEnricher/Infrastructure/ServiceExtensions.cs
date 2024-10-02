@@ -127,9 +127,11 @@ public static class ServiceExtensions
             })
             .AddTransient<IEhcoGeneralCertificateApplicationApi>(provider =>
                 new EhcoGeneralCertificateApplicationApi(provider.GetService<Configuration>()))
+            .AddTransient<IHealthApi>(provider => new HealthApi(provider.GetService<Configuration>()))
             .AddTransient<IIdcomsGeneralCertificateEnrichmentApi>(provider =>
                 new IdcomsGeneralCertificateEnrichmentApi(provider.GetService<Configuration>()))
             .AddTransient<IEnrichmentApi>(provider => new EnrichmentApi("samplegcid"));
+
 
         return services;
     }
