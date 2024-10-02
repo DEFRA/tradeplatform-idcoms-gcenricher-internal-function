@@ -53,7 +53,7 @@ public class Startup : FunctionsStartup
         string idcomsUserId = "f8f6570d-ebb9-e911-a970-000d3a29be4a";
         builder.AddCrmAdapterHealthCheck<InternalApimSettings>(services.BuildServiceProvider(), $"{_crmApi}", idcomsUserId);
 
-        builder.AddTradeInternalApiCheck<InternalApimSettings>(
+        builder.AddTradeInternalApiCheck<CrmInternalApimSettings>(
             services.BuildServiceProvider(),
             $"{_crmApi}/health");
 
@@ -74,5 +74,28 @@ public class Startup : FunctionsStartup
                     config.RefreshKeys.Add($"{GcEnricherSettings.GcEnricherSettingsSettingsName}:{GcEnricherSettings.AppConfigSentinelName}");
                 })
            .Build();
+    }
+}
+
+public class CrmInternalApimSettings : ITradeApiOptions
+{
+    public static string SectionName { get; set; } = "Apim:Internal";
+
+    public string Authority { get; set; }
+
+    public string BaseUrl { get; set; }
+
+    public string SubscriptionKey { get; set; }
+
+    public string SubscriptionKeyHeaderName { get; set; }
+
+    public string DaeraInternalCertificateStoreApiHealthEndpoint { get; set; } = "/api/health";
+
+    public string DaeraInternalCertificateStoreApi { get; set; } = "/certificates-store/v1";
+
+    public string BaseAddress
+    {
+        get => this.BaseUrl;
+        set => this.BaseUrl = value;
     }
 }

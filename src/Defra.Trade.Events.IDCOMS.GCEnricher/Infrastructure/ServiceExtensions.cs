@@ -70,6 +70,9 @@ public static class ServiceExtensions
         var appConfig = configuration.GetSection(InternalApimSettings.SectionName);
         services.AddOptions<InternalApimSettings>().Bind(appConfig);
 
+        var crmInternalApimSettings = configuration.GetSection(CrmInternalApimSettings.SectionName);
+        services.AddOptions<CrmInternalApimSettings>().Bind(crmInternalApimSettings);
+
         services.Configure<ServiceBusSettings>(configuration.GetSection(ServiceBusSettings.OptionsName));
 
         services.AddClientApiServices();
