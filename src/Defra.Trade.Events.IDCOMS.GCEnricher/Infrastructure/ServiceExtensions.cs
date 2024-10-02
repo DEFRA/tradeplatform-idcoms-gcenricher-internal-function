@@ -34,6 +34,7 @@ namespace Defra.Trade.Events.IDCOMS.GCEnricher.Infrastructure;
 public static class ServiceExtensions
 {
     private static readonly string _crmApi = "/trade-crm-adapter/v1";
+    private static readonly string _crmApiPath = "/trade-crm-adapter/v1";
 
     public static IServiceCollection AddServiceRegistrations(this IServiceCollection services, IConfiguration configuration)
     {
@@ -108,29 +109,31 @@ public static class ServiceExtensions
 
     private static IServiceCollection ConfigureGCStoreApi(this IServiceCollection services)
     {
-        services
-            .AddScoped((provider) =>
+        services.AddScoped(
+        (provider) =>
+        {
+            var authService = provider.GetService<IAuthenticationService>();
+            var apimSettings = provider.GetService<IOptions<InternalApimSettings>>()!.Value;
+            string authToken = authService.GetAuthenticationHeaderAsync().Result.ToString();
+            var config = new Configuration
             {
-                var authService = provider.GetService<IAuthenticationService>();
-                var apimSettings = provider.GetService<IOptions<InternalApimSettings>>()!.Value;
-                string authToken = authService.GetAuthenticationHeaderAsync().Result.ToString();
-                var config = new Configuration
+                BasePath =
+                 $"{apimSettings.BaseUrl}{apimSettings.DaeraInternalCertificateStoreApi}",
+                DefaultHeaders = new Dictionary<string, string>
                 {
-                    BasePath = $"{apimSettings.BaseUrl}{apimSettings.DaeraInternalCertificateStoreApi}",
-                    DefaultHeaders = new Dictionary<string, string>
+                    {"Authorization", authToken},
                     {
-                        {"Authorization", authToken},
-                        {apimSettings.SubscriptionKeyHeaderName, apimSettings.SubscriptionKey}
+                        apimSettings.SubscriptionKeyHeaderName,
+                        apimSettings.SubscriptionKey
                     }
-                };
-                return config;
-            })
-            .AddTransient<IEhcoGeneralCertificateApplicationApi>(provider =>
-                new EhcoGeneralCertificateApplicationApi(provider.GetService<Configuration>()))
+                }
+            };
+            return config;
+        }).AddTransient<IEhcoGeneralCertificateApplicationApi>(
+                provider => new EhcoGeneralCertificateApplicationApi(provider.GetService<Configuration>()))
             .AddTransient<IHealthApi>(provider => new HealthApi(provider.GetService<Configuration>()))
-            .AddTransient<IIdcomsGeneralCertificateEnrichmentApi>(provider =>
-                new IdcomsGeneralCertificateEnrichmentApi(provider.GetService<Configuration>()))
-            .AddTransient<IEnrichmentApi>(provider => new EnrichmentApi("samplegcid"));
+            .AddTransient<IIdcomsGeneralCertificateEnrichmentApi>(
+                provider => new IdcomsGeneralCertificateEnrichmentApi(provider.GetService<Configuration>()));
 
 
         return services;

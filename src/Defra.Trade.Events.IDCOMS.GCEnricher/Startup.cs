@@ -55,6 +55,10 @@ public class Startup : FunctionsStartup
 
         builder.AddTradeInternalApiCheck<InternalApimSettings>(
             services.BuildServiceProvider(),
+            $"{_crmApi}/health");
+
+        builder.AddTradeInternalApiCheck<InternalApimSettings>(
+            services.BuildServiceProvider(),
             $"{internalApimSettings.Value.DaeraInternalCertificateStoreApi}{internalApimSettings.Value.DaeraInternalCertificateStoreApiHealthEndpoint}");
 
         builder.AddAzureServiceBusCheck(configuration, "ServiceBus:ConnectionString", GcEnricherSettings.DefaultQueueName);
