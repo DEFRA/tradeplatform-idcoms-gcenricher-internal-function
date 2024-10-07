@@ -34,7 +34,6 @@ namespace Defra.Trade.Events.IDCOMS.GCEnricher.Infrastructure;
 public static class ServiceExtensions
 {
     private static readonly string _crmApi = "/trade-crm-adapter/v1";
-    private static readonly string _crmApiPath = "/trade-crm-adapter/v1";
 
     public static IServiceCollection AddServiceRegistrations(this IServiceCollection services, IConfiguration configuration)
     {
@@ -69,9 +68,6 @@ public static class ServiceExtensions
 
         var appConfig = configuration.GetSection(InternalApimSettings.SectionName);
         services.AddOptions<InternalApimSettings>().Bind(appConfig);
-
-        var crmInternalApimSettings = configuration.GetSection(CrmInternalApimSettings.SectionName);
-        services.AddOptions<CrmInternalApimSettings>().Bind(crmInternalApimSettings);
 
         services.Configure<ServiceBusSettings>(configuration.GetSection(ServiceBusSettings.OptionsName));
 
