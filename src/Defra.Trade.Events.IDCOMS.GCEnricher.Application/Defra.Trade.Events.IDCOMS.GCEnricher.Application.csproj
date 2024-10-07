@@ -12,7 +12,6 @@
 		<PackageReference Include="Defra.Trade.CrmAdapter.Api.V1.ApiClient" Version="2.3.6" />
 		<PackageReference Include="Microsoft.Extensions.DependencyModel" Version="8.0.1" />
     <PackageReference Include="Defra.Trade.API.CertificatesStore.V1.ApiClient" Version="2.5.0" />
-    <PackageReference Include="Defra.Trade.CrmAdapter.Api.V1.ApiClient" Version="2.3.6" />
-    <PackageReference Include="Defra.Trade.Common.Function.Health" Version="4.0.5" />
+    <PackageReference Include="Defra.Trade.Common.Function.Health" Version="4.0.6" />
 	</ItemGroup>
 </Project>

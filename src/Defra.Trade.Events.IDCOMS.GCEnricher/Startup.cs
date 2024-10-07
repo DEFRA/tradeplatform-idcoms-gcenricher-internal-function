@@ -53,9 +53,6 @@ public class Startup : FunctionsStartup
         string idcomsUserId = "f8f6570d-ebb9-e911-a970-000d3a29be4a";
         builder.AddCrmAdapterHealthCheck<InternalApimSettings>(services.BuildServiceProvider(), $"{_crmApi}", idcomsUserId);
 
-        builder.AddTradeInternalApiCheck<CrmInternalApimSettings>(
-            services.BuildServiceProvider(),
-            $"{_crmApi}/health");
 
         builder.AddTradeInternalApiCheck<InternalApimSettings>(
             services.BuildServiceProvider(),
@@ -77,7 +74,7 @@ public class Startup : FunctionsStartup
     }
 }
 
-public class CrmInternalApimSettings : ITradeApiOptions
+public class CrmInternalApimSettings : ITradeApiOptions, IConfigurationOptions
 {
     public static string SectionName { get; set; } = "Apim:Internal";
 
